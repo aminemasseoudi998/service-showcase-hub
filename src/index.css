@@ -41,10 +41,12 @@ All colors MUST be HSL.
     /* Custom design tokens */
     --gradient-hero: linear-gradient(135deg, hsl(215 35% 25%) 0%, hsl(215 45% 35%) 50%, hsl(190 85% 55%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(190 85% 55%) 0%, hsl(200 90% 60%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
     --shadow-soft: 0 4px 6px -1px hsl(215 35% 25% / 0.1), 0 2px 4px -1px hsl(215 35% 25% / 0.06);
     --shadow-medium: 0 10px 15px -3px hsl(215 35% 25% / 0.1), 0 4px 6px -2px hsl(215 35% 25% / 0.05);
     --shadow-large: 0 20px 25px -5px hsl(215 35% 25% / 0.1), 0 10px 10px -5px hsl(215 35% 25% / 0.04);
     --shadow-glow: 0 0 30px hsl(190 85% 55% / 0.3);
+    --shadow-elegant: 0 10px 40px -10px hsl(190 85% 55% / 0.2);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -87,10 +89,12 @@ All colors MUST be HSL.
 
     --gradient-hero: linear-gradient(135deg, hsl(215 35% 15%) 0%, hsl(215 45% 20%) 50%, hsl(190 85% 45%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(190 85% 45%) 0%, hsl(200 90% 50%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(215 35% 15%) 0%, hsl(215 35% 18%) 100%);
     --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.2), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
     --shadow-medium: 0 10px 15px -3px hsl(0 0% 0% / 0.2), 0 4px 6px -2px hsl(0 0% 0% / 0.1);
     --shadow-large: 0 20px 25px -5px hsl(0 0% 0% / 0.2), 0 10px 10px -5px hsl(0 0% 0% / 0.1);
     --shadow-glow: 0 0 30px hsl(190 85% 55% / 0.4);
+    --shadow-elegant: 0 10px 40px -10px hsl(190 85% 55% / 0.4);
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -131,6 +135,10 @@ All colors MUST be HSL.
     background: var(--gradient-accent);
   }
 
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
@@ -145,6 +153,10 @@ All colors MUST be HSL.
 
   .shadow-glow {
     box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
   }
 
   .text-gradient {
