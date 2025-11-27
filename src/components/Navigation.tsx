@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +43,7 @@ const Navigation = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -51,6 +53,14 @@ const Navigation = () => {
                 {link.label}
               </a>
             ))}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="text-foreground"
+            >
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </Button>
             <Button className="gradient-accent hover:opacity-90 transition-opacity">
               Get Started
             </Button>
@@ -80,6 +90,21 @@ const Navigation = () => {
                 {link.label}
               </a>
             ))}
+            <Button
+              variant="ghost"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="w-full justify-start"
+            >
+              {theme === "dark" ? (
+                <>
+                  <Sun className="mr-2" size={20} /> Light Mode
+                </>
+              ) : (
+                <>
+                  <Moon className="mr-2" size={20} /> Dark Mode
+                </>
+              )}
+            </Button>
             <Button className="w-full gradient-accent hover:opacity-90 transition-opacity">
               Get Started
             </Button>
