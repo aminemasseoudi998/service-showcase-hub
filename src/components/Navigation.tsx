@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Menu, X, Moon, Sun, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 
@@ -61,6 +62,12 @@ const Navigation = () => {
             >
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
+            <Link to="/auth">
+              <Button variant="outline" size="sm" className="mr-2">
+                <LogIn className="mr-2 h-4 w-4" />
+                Admin
+              </Button>
+            </Link>
             <Button className="gradient-accent hover:opacity-90 transition-opacity">
               Get Started
             </Button>
@@ -90,6 +97,13 @@ const Navigation = () => {
                 {link.label}
               </a>
             ))}
+            <Link
+              to="/auth"
+              className="block text-foreground hover:text-accent transition-colors duration-300 font-medium py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Admin Login
+            </Link>
             <Button
               variant="ghost"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
